@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	);
 	wow.init();
 
-
 	let card = document.querySelector(".card")
 	let buttonCards = document.querySelector(".button__cards")
 	if(buttonCards !=null) {
@@ -57,14 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			click_to_move: false // Allow a user to click (or tap) anywhere on the image to move the slider to that location.
 		});
 	});
-	const sliderAnimals = new Swiper(".slider__animals", {
-    spaceBetween: 0,
-    slidesPerView: 3,
-		speed: 8000,
-    centeredSlides: true,
-		autoplay: true,
-    loop: true,
-  });
 	let doctorcolsswiper = new Swiper(".doctor-cols-swiper", {
 		slidesPerView: 1,
 		effect: 'fade',
@@ -307,7 +298,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 	let humburger = document.querySelectorAll(".humburger")
-
 	if(humburger !== null) {
 		let overlay = document.querySelectorAll(".overlay__wrapp")
 		let overlayClase = document.querySelectorAll(".overlay__clase")
@@ -349,8 +339,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 	}
-
-
 
 	let overlayFirstLevel = document.querySelectorAll(".overlay__firstLevel");
 	for(let i=0; i<overlayFirstLevel.length; i++) {
@@ -793,6 +781,4 @@ document.addEventListener('DOMContentLoaded', () => {
 	 		delay: 5000,
  		},
 	});
-
-
 })
