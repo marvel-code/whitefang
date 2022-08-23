@@ -15,6 +15,8 @@ $(window).on('load', () => {
     slides[left + 2].classList.add('right');
     slides[left + 3].classList.add('right-2');
     function nextSlide() {
+        if (!document.hasFocus())
+            return;
         slides.addClass('transition');
         slides[(slides.length + left - 1) % slides.length].classList.remove('left-2')
         slides[(left + 0) % slides.length].classList.remove('left');
