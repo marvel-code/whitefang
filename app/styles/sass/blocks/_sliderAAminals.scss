@@ -15,6 +15,7 @@ $header-height: 127px;
 		height: 0;
 		left: 100%;
 		display: none;
+		filter: grayscale(1);
 
 		&.transition {
 			transition: all $transition-speed ease-in-out;
@@ -35,7 +36,7 @@ $header-height: 127px;
 		}
 		
 		&.left, &.right {
-			height: 70%;
+			height: calc(min(70%, 50vw));
 		}
 
 		&.left-2 {
@@ -45,25 +46,30 @@ $header-height: 127px;
 		}
 
 		&.left {
+			transition: all $transition-speed ease-in-out;
 			left: 15%;
 			z-index: 1;
 		}
 
 		&.center {
+			transition: all $transition-speed ease-in-out;
 			left: 50%;
-			height: 100%;
+			height: calc(min(100%, 80vw));
 			z-index: 2;
+			filter: grayscale(0);
+			opacity: 1;
 		}
 
 		&.right {
 			left: 85%;
-			z-index: 3;
+			z-index: 1;
+			transition: all $transition-speed ease-out;
 		}
 		
 		&.right-2 {
 			left: 100%;
 			transform: translateX(0);
-			z-index: 4;
+			z-index: 0;
 		}
 	}
 }
