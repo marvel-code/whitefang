@@ -41,9 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			card.classList.add("active")
 		})
 	}
-	$(function(){
-		$("#container1").twentytwenty();
-	});
+	// $(function(){
+	// 	$("#container1").twentytwenty();
+	// });
 	$(function(){
 		$(".twentytwenty-container").twentytwenty({
 			default_offset_pct: 0.3, // How much of the before image is visible when the page loads
