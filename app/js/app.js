@@ -241,16 +241,16 @@ document.addEventListener('DOMContentLoaded', () => {
 		
 	});
 	const sliderRooms = new Swiper(".slider__rooms", {
-    spaceBetween: 0,
-    slidesPerView: 1,
+		spaceBetween: 0,
+		slidesPerView: 1,
 		speed: 4000,
-    centeredSlides: true,
+		centeredSlides: true,
 		effect: 'fade',
 		fadeEffect: {
 			crossFade: true
 		},
 		autoplay: true,
-    loop: true,
+    	loop: true,
 		pagination: {
 			el: '.swiper-pagination__rooms',
 			type: 'bullets',
@@ -265,21 +265,18 @@ document.addEventListener('DOMContentLoaded', () => {
 					let idex = elem.swiper.realIndex
 					illuminationBjllets(bulletsAll, idex)
 				});
-
-					
-				
 			}, 
 		}
   });
 
 	function illuminationBjllets (bullets, indexSlide) {
-		if(indexSlide == 0) {
-			bullets.forEach(el => {
+		bullets.forEach((el, index) => {
+			if(indexSlide < index) {
 				el.classList.remove("bulletActive")
-			})
-		}
-		bullets.forEach(el => {
-			if(el.classList.contains('swiper-pagination-bullet-active')){
+			}
+		})
+		bullets.forEach((el, index) => {
+			if(indexSlide >= index){
 				el.classList.add("bulletActive")
 			}
 		})
