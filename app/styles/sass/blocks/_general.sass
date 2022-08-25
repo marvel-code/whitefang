@@ -518,32 +518,36 @@
 	.bullets__line.swiper-pagination
 		.swiper-pagination-bullet
 			position: relative
-			width: 22px
-			height: 22px
-			border: 2px solid #fff
+			width: 24px
+			height: 24px
 			background: transparent
 			opacity: 1
 			margin-right: 53px
+			box-sizing: border-box
+			border: 2px solid #fff
+			transition: background 0.2s ease-in-out
+			&:hover
+				background: #ffffffaa
 			&::before
-				content: url(#{$assetImages}/bullets__line__passive.svg)
+				content: ' '
+				background: white
 				position: absolute
-				left: 20px
-				bottom: 0px
-				z-index: 0
-			&:last-child
+				left: -59px
+				bottom: calc(50% - 1px)
+				width: 57px
+				height: 2px
+				transition: background 0.2s ease-in-out
+			&:first-child
 				&::before
 					content: none
 		.bulletActive, .swiper-pagination-bullet-active
-			width: 22px
-			height: 22px
-			background: linear-gradient(180deg, #875F46 0%, #E6DC87 49.48%, #A5804F 100%)
-			border: 2px solid #ffffff00
+			background: #E6DC87
+			border-color: #E6DC87
+			&:hover
+				background: #E6DC87aa
+				border-color: #E6DC87aa
 			&::before
-				content: url(#{$assetImages}/bullets__line__active.svg)
-				position: absolute
-				left: 20px
-				bottom: 0px
-				z-index: 0
+				background: #E6DC87
 
 .section__cards
 	height: 90vh
