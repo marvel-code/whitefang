@@ -857,6 +857,8 @@
 			transition: background .1s ease
 			background: linear-gradient(180deg, #875F46 0%, #CBC270 49.48%, #A5804F 100%)
 .button__WS
+	img
+		filter: grayscale(1)
 	span
 		mask-image: url(#{$assetImages}/callMe__watt.svg)
 		-webkit-mask-repeat: no-repeat
@@ -866,6 +868,8 @@
 		margin-right: 9px
 .button__WS
 	&:hover
+		img
+			filter: grayscale(0)
 		span
 			mask-image: url(#{$assetImages}/callMe__watt.svg)
 			transition: background .1s ease
