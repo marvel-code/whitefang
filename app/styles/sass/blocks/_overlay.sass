@@ -73,35 +73,30 @@
 .overlay__secondList
 	position: absolute
 	right: 280px
-	width: 100%
-	max-width: 205px
 	display: none
 	align-items: flex-start
 	justify-content: flex-start
 	flex-flow: column nowrap
 	top: 0
-	// background: #fff
+	background: #fff
 	font-family: $userfont3
 	font-style: normal
 	font-weight: 400
 	font-size: 18px
-	line-height: 150%
 	color: #121212
+	margin-right: 6px
+	padding: 20px 0
+	gap: 20px
 .humburger
 	cursor: pointer
 .secondLevel
 	position: relative
-	width: 95%
-	height: 50px
-	padding-left: 36px
-	background: #fff
+	padding: 0 36px
 	display: flex
 	justify-content: flex-start
 	align-items: center
-	&:first-child
-		padding-top: 10px
-	&:last-child
-		padding-bottom: 10px
+	.overlay__secondLevel__link
+		white-space: nowrap
 .overlay__firstLevel
 	border-bottom: 2px solid #d9cb7e00
 	transition: all .7s

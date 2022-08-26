@@ -294,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	let humburger = document.querySelectorAll(".humburger")
 	if(humburger !== null) {
 		let overlay = document.querySelectorAll(".overlay__wrapp")
-		let overlayClase = document.querySelectorAll(".overlay__clase")
+		let overlayClose = document.querySelectorAll(".overlay__clase")
 		humburger.forEach(item => {
 			item.addEventListener("click", ()=>{
 				overlay.forEach(i => {
@@ -306,7 +306,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			}) 
 		})
-		overlay.forEach(close => {
+		// overlay.forEach(close => {
+		// 	close.addEventListener("click", ()=>{
+		// 		overlay.forEach(i => {
+		// 			i.classList.add("animate__fadeOutRight"); 
+		// 			i.classList.remove("animate__fadeInRight");
+		// 			setTimeout(()=>{
+		// 				i.classList.remove("active");
+		// 			}, 600)
+		// 		})
+	
+		// 	}) 
+		// })
+		overlayClose.forEach(close => {
 			close.addEventListener("click", ()=>{
 				overlay.forEach(i => {
 					i.classList.add("animate__fadeOutRight"); 
@@ -318,20 +330,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	
 			}) 
 		})
-		overlayClase.forEach(close => {
-			close.addEventListener("click", ()=>{
-				overlay.forEach(i => {
-					i.classList.add("animate__fadeOutRight"); 
-					i.classList.remove("animate__fadeInRight");
-					setTimeout(()=>{
-						i.classList.remove("active");
-					}, 600)
-				})
-	
-			}) 
-		})
-
-
 	}
 
 	let overlayFirstLevel = document.querySelectorAll(".overlay__firstLevel");
@@ -340,27 +338,27 @@ document.addEventListener('DOMContentLoaded', () => {
 		overlayFirstLevel[i].addEventListener("mouseleave", hideSub, false);
 		// overlayFirstLevel[i].addEventListener("click", clickshow, false);
 	}
-	function showSub(e) {
-		if(this.children.length>1) {
-				this.children[2].classList.add("active", "animate__fadeInRight");
-				this.children[2].classList.remove("animate__fadeOutRight");
+	// function showSub(e) {
+	// 	if(this.children.length>1) {
+	// 			this.children[2].classList.add("active", "animate__fadeInRight");
+	// 			this.children[2].classList.remove("animate__fadeOutRight");
 
-		} else {
-				return false;
-		}
-	}
-	function hideSub(e) {
-			if(this.children.length>1) {
-				this.children[2].classList.remove("animate__fadeInRight");
-				this.children[2].classList.add("animate__fadeOutRight");
-				setTimeout(()=>{
-					this.children[2].classList.remove("active");
-				}, 450)
+	// 	} else {
+	// 			return false;
+	// 	}
+	// }
+	// function hideSub(e) {
+	// 		if(this.children.length>1) {
+	// 			this.children[2].classList.remove("animate__fadeInRight");
+	// 			this.children[2].classList.add("animate__fadeOutRight");
+	// 			setTimeout(()=>{
+	// 				this.children[2].classList.remove("active");
+	// 			}, 450)
 
-			} else {
-				return false;
-			}
-	}
+	// 		} else {
+	// 			return false;
+	// 		}
+	// }
 	// let overlaySecondList = document.querySelector(".overlay__secondList")
 
 	// function clickshow(e) {
