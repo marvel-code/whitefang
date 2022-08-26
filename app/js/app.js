@@ -338,27 +338,27 @@ document.addEventListener('DOMContentLoaded', () => {
 		overlayFirstLevel[i].addEventListener("mouseleave", hideSub, false);
 		// overlayFirstLevel[i].addEventListener("click", clickshow, false);
 	}
-	// function showSub(e) {
-	// 	if(this.children.length>1) {
-	// 			this.children[2].classList.add("active", "animate__fadeInRight");
-	// 			this.children[2].classList.remove("animate__fadeOutRight");
+	function showSub(e) {
+		if(this.children.length > 2) {
+				this.children[2].classList.add("active", "animate__fadeInRight");
+				this.children[2].classList.remove("animate__fadeOutRight");
 
-	// 	} else {
-	// 			return false;
-	// 	}
-	// }
-	// function hideSub(e) {
-	// 		if(this.children.length>1) {
-	// 			this.children[2].classList.remove("animate__fadeInRight");
-	// 			this.children[2].classList.add("animate__fadeOutRight");
-	// 			setTimeout(()=>{
-	// 				this.children[2].classList.remove("active");
-	// 			}, 450)
+		} else {
+				return false;
+		}
+	}
+	function hideSub(e) {
+			if(this.children.length>2) {
+				this.children[2].classList.remove("animate__fadeInRight");
+				this.children[2].classList.add("animate__fadeOutRight");
+				setTimeout(()=>{
+					this.children[2].classList.remove("active");
+				}, 450)
 
-	// 		} else {
-	// 			return false;
-	// 		}
-	// }
+			} else {
+				return false;
+			}
+	}
 	// let overlaySecondList = document.querySelector(".overlay__secondList")
 
 	// function clickshow(e) {
