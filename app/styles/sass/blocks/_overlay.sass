@@ -71,9 +71,10 @@
 .overlay__secondList.active
 		display: flex
 .overlay__secondList
+	display: flex
+	transition: all .7s ease-out
+	right: 240px
 	position: absolute
-	right: 280px
-	display: none
 	align-items: flex-start
 	justify-content: flex-start
 	flex-flow: column nowrap
@@ -87,6 +88,8 @@
 	margin-right: 6px
 	padding: 20px 0
 	gap: 20px
+	opacity: 0
+	z-index: -1
 .humburger
 	cursor: pointer
 .secondLevel
@@ -110,6 +113,9 @@
 	&:hover
 		.overlay__firstLevel__hr
 			opacity: 1
+		.overlay__secondList
+			opacity: 1
+			right: 280px
 
 .overlay__firstLevel 
 	display: flex
