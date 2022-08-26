@@ -342,7 +342,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		if(this.children.length > 2) {
 				this.children[2].classList.add("active", "animate__fadeInRight");
 				this.children[2].classList.remove("animate__fadeOutRight");
-
 		} else {
 				return false;
 		}
