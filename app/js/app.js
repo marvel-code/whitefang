@@ -563,11 +563,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		// },
 	});
 
-
 		$(function($) {
 			$(document).on("click",'.show-more', function(){
 				$(this).toggleClass('active');
-				$(this).next('.show-more__content').toggleClass('active');
+				$(this).parent().next('.show-more__content').toggleClass('active');
 			});
 		});
 

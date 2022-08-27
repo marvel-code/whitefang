@@ -16,12 +16,15 @@
 .content .container{
 	margin: 0 auto;
 }
+.show-more {
+	margin-bottom: 0 !important;
+}
 .show-more__content{
 	visibility: hidden;
 	opacity: 0;
 	height: 0;
 	transition: ease all 0.3s;
-	margin-top: 60px;
+	margin-top: 20px;
 }
 .show-more__content.active{
 	visibility: visible;
@@ -146,7 +149,7 @@
 
 .doctor-section-carousel__controls{
 	position: absolute;
-	top: 0px;
+	bottom: 0px;
 	right: -16px;
 	width: 140px;
 	height: 30px;
