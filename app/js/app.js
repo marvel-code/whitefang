@@ -592,8 +592,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			spaceBetween: 20,
 			speed: 1000,
 			navigation: {
-				nextEl: ".awards__prev",
-				prevEl: ".awards__next",
+				prevEl: ".awards__prev",
+				nextEl: ".awards__next",
 			},
 		});
 
