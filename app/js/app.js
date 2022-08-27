@@ -295,40 +295,38 @@ document.addEventListener('DOMContentLoaded', () => {
 	if(humburger !== null) {
 		let overlay = document.querySelectorAll(".overlay__wrapp")
 		let overlayClose = document.querySelectorAll(".overlay__clase")
+
+		function closeOverlay() {
+			overlay.forEach(i => {
+				i.classList.add("animate__fadeOutRight"); 
+				i.classList.remove("animate__fadeInRight");
+				setTimeout(()=>{
+					i.classList.remove("active");
+				}, 600)
+			});
+		}
+
 		humburger.forEach(item => {
 			item.addEventListener("click", ()=>{
 				overlay.forEach(i => {
 					i.classList.add("active");
 					i.classList.remove("animate__fadeOutRight");
 					i.classList.add("animate__fadeInRight");
-				})
-				
-
-			}) 
-		})
-		// overlay.forEach(close => {
-		// 	close.addEventListener("click", ()=>{
-		// 		overlay.forEach(i => {
-		// 			i.classList.add("animate__fadeOutRight"); 
-		// 			i.classList.remove("animate__fadeInRight");
-		// 			setTimeout(()=>{
-		// 				i.classList.remove("active");
-		// 			}, 600)
-		// 		})
-	
-		// 	}) 
-		// })
+				});
+			});
+		});
 		overlayClose.forEach(close => {
 			close.addEventListener("click", ()=>{
-				overlay.forEach(i => {
-					i.classList.add("animate__fadeOutRight"); 
-					i.classList.remove("animate__fadeInRight");
-					setTimeout(()=>{
-						i.classList.remove("active");
-					}, 600)
-				})
-	
-			}) 
+				closeOverlay();
+			});
+		});
+		document.addEventListener('click', (e) => {
+			function hasAncestor(el, ancestor) {
+				return el.parentNode && (el.parentNode === ancestor || hasAncestor(el.parentNode, ancestor));
+			}
+			if (!hasAncestor(e.target, overlay[0]) && !hasAncestor(e.target, humburger[0])) {
+				closeOverlay();
+			}
 		})
 	}
 
