@@ -21,6 +21,7 @@
 	opacity: 0;
 	height: 0;
 	transition: ease all 0.3s;
+	margin-top: 60px;
 }
 .show-more__content.active{
 	visibility: visible;
@@ -31,7 +32,7 @@
 	position: relative;
 }
 .doctor-image{
-	padding: 200px 0;
+	padding: 200px 0 100px;
 	background: #121212;
 	font-family: CenturyGothic,sans-serif;
 }
@@ -85,10 +86,9 @@
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
 	color: #121212;
-	margin: 0 0 200px;
 }
 .doctor-section .text{
-	display: none;
+	margin-bottom: 20px;
 }
 .doctor-section h4{
 	font-weight: 700;
@@ -118,7 +118,6 @@
 }
 .doctor-section-carousel{
 	position: relative;
-	padding-top: 80px;
 }
 .doctor-section-carousel__wrap{
 	max-width: 1350px;
@@ -148,7 +147,7 @@
 .doctor-section-carousel__controls{
 	position: absolute;
 	top: 0px;
-	right: 0;
+	right: -16px;
 	width: 140px;
 	height: 30px;
 }

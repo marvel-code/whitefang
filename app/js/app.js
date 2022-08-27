@@ -12,7 +12,7 @@ import { Swiper, Pagination, Scrollbar, Navigation, Controller, Autoplay, Mousew
 Swiper.use([ Pagination, Scrollbar, Navigation, Controller, Autoplay, Mousewheel, Parallax, EffectFade, EffectCoverflow, Thumbs, EffectCreative])
 
 document.addEventListener('DOMContentLoaded', () => {
-	// Show HTML element
+	//  HTML element
 	// Fancybox.show([{ 
 	// 	src: "#dialog-content", 
 	// 	type: "inline" 
@@ -562,13 +562,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		// 	multipleActiveThumbs: false
 		// },
 	});
-	$(function($) {
-		$(document).on("click",'.show-more', function(){
-			$(this).toggleClass('active');
-			$(this).next('.show-more__content').toggleClass('active');
-		
+
+
+		$(function($) {
+			$(document).on("click",'.show-more', function(){
+				$(this).toggleClass('active');
+				$(this).next('.show-more__content').toggleClass('active');
+			});
 		});
-	});
+
 		let doctorswiper = new Swiper(".doctor-swiper", {
 			slidesPerView: 1,
 			keyboard: {

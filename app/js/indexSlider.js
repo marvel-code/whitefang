@@ -9,11 +9,13 @@ $(window).on('load', () => {
     // Initialize
     const slider = $('.slider__animals');
     const slides = slider.children('.animal-slide');
+    if (!slides.length) return;
     let left = 0;
     slides[left + 0].classList.add('left');
     slides[left + 1].classList.add('center');
     slides[left + 2].classList.add('right');
     slides[left + 3].classList.add('right-2');
+
     function nextSlide() {
         if (!document.hasFocus())
             return;
