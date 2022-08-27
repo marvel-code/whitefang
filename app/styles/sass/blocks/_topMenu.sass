@@ -6,8 +6,12 @@
 	width: 100%
 	z-index: 100
 	justify-content: center
-	align-items: flex-start
+	align-items: flex-start	
+	&.darkTheme
+		.topMenu
+			filter: invert(100%)
 .topMenu
+	transition: filter 3s linear
 	position: relative
 	width: 100%
 	display: flex
@@ -35,7 +39,7 @@
 				position: relative
 				margin-right: 9px
 				align-self: flex-end
-				display: flex
+				display: none // display: flex
 			.contacts
 				position: relative
 				width: 100%
@@ -43,7 +47,7 @@
 				align-self: flex-start
 				justify-content: flex-start
 				flex-flow: column nowrap
-				display: flex
+				display: none // display: flex
 .contacts__desc
 	white-space: nowrap
 .humburger

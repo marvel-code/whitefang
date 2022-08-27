@@ -25,20 +25,15 @@ $(window).on('load', () => {
         },
         mousewheel: true,
         on: {
-
             slideChange : function() {
                 let workSliderDesc = document.querySelectorAll(".aboutUs")
                 workSliderDesc.forEach(elem => {
                     let idex = elem.swiper.realIndex
                     menuCheck(elem.swiper.slides[idex])
                     ShowUpElement(idex)
-                    
                 });
             }, 
         }
-
-
-
     });
     function ShowUpElement (n) {
         let idexUpElement = n;
@@ -112,20 +107,16 @@ $(window).on('load', () => {
         }
 
     }
-    function menuCheck (el) {
-        // let slideClass = el;
-        // console.log(slideClass)
-        // let topMenuWhite = document.querySelector(".topMenu__white")
-        // let topMenuBlack = document.querySelector(".topMenu__black")
-        // slideClass.classList.forEach(item  => {
-        //     console.log(item)
-        //     if( item == "menuWhite") {
-        //         topMenuWhite.classList.remove("hidde")
-        //         topMenuBlack.classList.add("hidde")
-        //     } else if (item == "menuBlack"){
-        //         topMenuBlack.classList.remove("hidde")
-        //         topMenuWhite.classList.add("hidde")
-        //     }
-        // })
+    function menuCheck(elSlide) {
+        if (document.querySelector('.aboutUs')) {
+            const topMenu = document.querySelector(".section__topMenu")
+            if (elSlide?.classList.contains('menuBlack')) {
+                topMenu.classList.remove('darkTheme')
+            } else {
+                topMenu.classList.add('darkTheme')
+            }
+        }
     }
+
+    menuCheck();
 });
