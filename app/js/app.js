@@ -585,6 +585,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				nextEl: ".doctor-swiper-button-next",
 				prevEl: ".doctor-swiper-button-prev",
 			},
+			allowTouchMove: false,
 		});
 
 		let awardsswiper = new Swiper(".awards-swiper", {
