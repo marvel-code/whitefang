@@ -53,7 +53,23 @@ document.addEventListener('DOMContentLoaded', () => {
 			click_to_move: false // Allow a user to click (or tap) anywhere on the image to move the slider to that location.
 		});
 	});
-	let doctorcolsswiper = new Swiper(".doctor-cols-swiper", {
+
+	//  Doctors swiper on index.html
+	new Swiper(".section__main .doctor-cols-swiper", {
+		slidesPerView: 1,
+		effect: 'fade',
+		speed: 300,
+		fadeEffect: {
+			crossFade: true
+		},
+		navigation: {
+			nextEl: ".doctor-cols-swiper .swiper-button-next",
+			prevEl: ".doctor-cols-swiper .swiper-button-prev",
+		},
+	});
+
+	//  Doctors swiper on doctor.html
+	new Swiper(".doctor-page .doctor-cols-swiper", {
 		slidesPerView: 1,
 		effect: 'fade',
 		speed: 300,
@@ -61,29 +77,27 @@ document.addEventListener('DOMContentLoaded', () => {
 			crossFade: true
 		},
 		pagination: {
-			el: ".doctor-cols-swiper-pagination",
+			el: ".doctor-cols-swiper .swiper-pagination",
+			bulletActiveClass: 'swiper-pagination-bullet-active',
 			clickable: true,
 		},
 		navigation: {
-			nextEl: ".doctor-cols-swiper-button-next",
-			prevEl: ".doctor-cols-swiper-button-prev",
+			nextEl: ".doctor-cols-swiper .swiper-button-next",
+			prevEl: ".doctor-cols-swiper .swiper-button-prev",
 		},
 		on: {
 			slideChange : function() {
-				let paginationAllActive = document.querySelector(".pagination__AllActive--doctors")
-				let bulletsAll = paginationAllActive.querySelectorAll(".swiper-pagination-bullet")
+				let bulletsAll = document.querySelectorAll(".doctor-cols-swiper .swiper-pagination-bullet")
 				let sliderdoctorSmoll = document.querySelectorAll(".doctor-cols-swiper")
 				sliderdoctorSmoll.forEach(elem => {
-					let idex = elem.swiper.realIndex
-					illuminationBjllets(bulletsAll, idex)
+					let index = elem.swiper.realIndex;
+					console.log(bulletsAll, index);
+					illuminationBjllets(bulletsAll, index);
 				});	
 				sliderdoctorSmoll.forEach(elem => {
 					let swiperWrapperDoctorSmoll = document.querySelector(".doctor-cols-swiper > .swiper-wrapper")
 					let idex = elem.swiper.realIndex
 					let slideHieght = elem.swiper.slides[idex].querySelector(".doctor-cols-carousel__row").offsetHeight
-					let eee = elem.swiper.slides[idex]
-					console.log(slideHieght)
-					console.log(eee)
 					swiperWrapperDoctorSmoll.style.height = slideHieght + "px"
 				});	
 			},
@@ -99,144 +113,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 		
 	});
-	let doctorcolsswiper2 = new Swiper(".doctor-cols-swiper2", {
-		slidesPerView: 1,
-		effect: 'fade',
-		speed: 300,
-		fadeEffect: {
-			crossFade: true
-		},
-		pagination: {
-			el: ".doctor-cols-swiper-pagination",
-			clickable: true,
-		},
-		navigation: {
-			nextEl: ".doctor-cols-swiper-button-next",
-			prevEl: ".doctor-cols-swiper-button-prev",
-		},
-		on: {
-			slideChange : function() {
-				// let paginationAllActive = document.querySelector(".pagination__AllActive--doctors")
-				// let bulletsAll = paginationAllActive.querySelectorAll(".swiper-pagination-bullet")
-				let sliderdoctorSmoll = document.querySelectorAll(".doctor-cols-swiper2")
-				// sliderdoctorSmoll.forEach(elem => {
-				// 	let idex = elem.swiper.realIndex
-				// 	illuminationBjllets(bulletsAll, idex)
-				// });	
-				sliderdoctorSmoll.forEach(elem => {
-					let swiperWrapperDoctorSmoll = document.querySelector(".doctor-cols-swiper2 > .swiper-wrapper")
-					let idex = elem.swiper.realIndex
-					let slideHieght = elem.swiper.slides[idex].querySelector(".doctor-cols-carousel__row").offsetHeight
-					let eee = elem.swiper.slides[idex]
-					console.log(slideHieght)
-					console.log(eee)
-					swiperWrapperDoctorSmoll.style.height = slideHieght + "px"
-				});	
-			},
-			beforeResize: function() {
-				let sliderdoctorSmoll = document.querySelectorAll(".doctor-cols-swiper2")
-				sliderdoctorSmoll.forEach(elem => {
-					let swiperWrapperDoctorSmoll = document.querySelector(".doctor-cols-swiper2 > .swiper-wrapper")
-					let idex = elem.swiper.realIndex
-					let slideHieght = elem.swiper.slides[idex].querySelector(".doctor-cols-carousel__row").offsetHeight
-					swiperWrapperDoctorSmoll.style.height = slideHieght + "px"
-				});	
-			}
-		}
-		
-	});
-	let doctorcolsswiper3 = new Swiper(".doctor-cols-swiper3", {
-		slidesPerView: 1,
-		effect: 'fade',
-		speed: 300,
-		fadeEffect: {
-			crossFade: true
-		},
-		pagination: {
-			el: ".doctor-cols-swiper-pagination",
-			clickable: true,
-		},
-		navigation: {
-			nextEl: ".doctor-cols-swiper-button-next",
-			prevEl: ".doctor-cols-swiper-button-prev",
-		},
-		on: {
-			slideChange : function() {
-				// let paginationAllActive = document.querySelector(".pagination__AllActive--doctors")
-				// let bulletsAll = paginationAllActive.querySelectorAll(".swiper-pagination-bullet")
-				let sliderdoctorSmoll = document.querySelectorAll(".doctor-cols-swiper3")
-				// sliderdoctorSmoll.forEach(elem => {
-				// 	let idex = elem.swiper.realIndex
-				// 	illuminationBjllets(bulletsAll, idex)
-				// });	
-				sliderdoctorSmoll.forEach(elem => {
-					let swiperWrapperDoctorSmoll = document.querySelector(".doctor-cols-swiper3 > .swiper-wrapper")
-					let idex = elem.swiper.realIndex
-					let slideHieght = elem.swiper.slides[idex].querySelector(".doctor-cols-carousel__row").offsetHeight
-					let eee = elem.swiper.slides[idex]
-					console.log(slideHieght)
-					console.log(eee)
-					swiperWrapperDoctorSmoll.style.height = slideHieght + "px"
-				});	
-			},
-			beforeResize: function() {
-				let sliderdoctorSmoll = document.querySelectorAll(".doctor-cols-swiper3")
-				sliderdoctorSmoll.forEach(elem => {
-					let swiperWrapperDoctorSmoll = document.querySelector(".doctor-cols-swiper3 > .swiper-wrapper")
-					let idex = elem.swiper.realIndex
-					let slideHieght = elem.swiper.slides[idex].querySelector(".doctor-cols-carousel__row").offsetHeight
-					swiperWrapperDoctorSmoll.style.height = slideHieght + "px"
-				});	
-			}
-		}
-		
-	});
-	let doctorcolsswiper4 = new Swiper(".doctor-cols-swiper4", {
-		slidesPerView: 1,
-		effect: 'fade',
-		speed: 300,
-		fadeEffect: {
-			crossFade: true
-		},
-		pagination: {
-			el: ".doctor-cols-swiper-pagination",
-			clickable: true,
-		},
-		navigation: {
-			nextEl: ".doctor-cols-swiper-button-next",
-			prevEl: ".doctor-cols-swiper-button-prev",
-		},
-		on: {
-			slideChange : function() {
-				// let paginationAllActive = document.querySelector(".pagination__AllActive--doctors")
-				// let bulletsAll = paginationAllActive.querySelectorAll(".swiper-pagination-bullet")
-				let sliderdoctorSmoll = document.querySelectorAll(".doctor-cols-swiper4")
-				// sliderdoctorSmoll.forEach(elem => {
-				// 	let idex = elem.swiper.realIndex
-				// 	illuminationBjllets(bulletsAll, idex)
-				// });	
-				sliderdoctorSmoll.forEach(elem => {
-					let swiperWrapperDoctorSmoll = document.querySelector(".doctor-cols-swiper4 > .swiper-wrapper")
-					let idex = elem.swiper.realIndex
-					let slideHieght = elem.swiper.slides[idex].querySelector(".doctor-cols-carousel__row").offsetHeight
-					let eee = elem.swiper.slides[idex]
-					console.log(slideHieght)
-					console.log(eee)
-					swiperWrapperDoctorSmoll.style.height = slideHieght + "px"
-				});	
-			},
-			beforeResize: function() {
-				let sliderdoctorSmoll = document.querySelectorAll(".doctor-cols-swiper4")
-				sliderdoctorSmoll.forEach(elem => {
-					let swiperWrapperDoctorSmoll = document.querySelector(".doctor-cols-swiper4 > .swiper-wrapper")
-					let idex = elem.swiper.realIndex
-					let slideHieght = elem.swiper.slides[idex].querySelector(".doctor-cols-carousel__row").offsetHeight
-					swiperWrapperDoctorSmoll.style.height = slideHieght + "px"
-				});	
-			}
-		}
-		
-	});
+
+
 	const sliderRooms = new Swiper(".slider__rooms", {
 		spaceBetween: 0,
 		slidesPerView: 1,
@@ -249,24 +127,24 @@ document.addEventListener('DOMContentLoaded', () => {
 		autoplay: true,
     	loop: true,
 		pagination: {
-			el: '.swiper-pagination__rooms',
+			el: '.slider__rooms .swiper-pagination',
 			type: 'bullets',
 			clickable: true,
 		},
 		on: {
 			slideChange : function() {
-				let paginationAllActive = document.querySelector(".pagination__AllActive")
-				let bulletsAll = paginationAllActive.querySelectorAll(".swiper-pagination-bullet")
+				let bulletsAll = document.querySelectorAll(".slider__rooms .swiper-pagination-bullet")
 				let sliderRooms = document.querySelectorAll(".slider__rooms")
 				sliderRooms.forEach(elem => {
-					let idex = elem.swiper.realIndex
-					illuminationBjllets(bulletsAll, idex)
+					let index = elem.swiper.realIndex;
+					illuminationBjllets(bulletsAll, index);
 				});
 			}, 
 		}
   });
 
 	function illuminationBjllets (bullets, indexSlide) {
+		console.log({ bullets, indexSlide })
 		bullets.forEach((el, index) => {
 			if(indexSlide < index) {
 				el.classList.remove("bulletActive")

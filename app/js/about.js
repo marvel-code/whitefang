@@ -37,11 +37,12 @@ $(window).on('load', () => {
     });
     function ShowUpElement (n) {
         let idexUpElement = n;
-        console.log(idexUpElement)
         let UpElement1 = document.querySelector(".UpElement__1")
         let UpElement2 = document.querySelector(".UpElement__2")
         let UpElement3 = document.querySelector(".UpElement__3")
         let UpElement4 = document.querySelector(".UpElement__4")
+        if (!UpElement1) return;
+
         switch (idexUpElement) {
             case 0:
                 UpElement1.classList.add("showUpElement");
@@ -119,4 +120,5 @@ $(window).on('load', () => {
     }
 
     menuCheck();
+    ShowUpElement(0);
 });

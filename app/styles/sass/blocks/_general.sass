@@ -140,6 +140,15 @@
 	background-position: center center
 	background-repeat: no-repeat
 	background-size: cover
+.doctor-swiper-button-prev:after,
+.doctor-swiper-button-next:after
+	font-size: 22px
+	font-weight: 700
+.slider__advantages__control
+	.swiper-button-prev:after,
+	.swiper-button-next:after
+		font-size: 22px
+		font-weight: 700
 .black__bg
 	background: #000
 .paralax
@@ -514,41 +523,7 @@
 	color: #FFFFFF
 	width: 100%
 	max-width: 337px
-.swiper
-	.bullets__line.swiper-pagination
-		.swiper-pagination-bullet
-			position: relative
-			width: 24px
-			height: 24px
-			background: transparent
-			opacity: 1
-			margin-right: 53px
-			box-sizing: border-box
-			border: 2px solid #fff
-			transition: background 0.2s ease-in-out
-			&:hover
-				background: #ffffffaa
-			&::before
-				content: ' '
-				background: white
-				position: absolute
-				left: -59px
-				bottom: calc(50% - 1px)
-				width: 57px
-				height: 2px
-				transition: background 0.2s ease-in-out
-			&:first-child
-				&::before
-					content: none
-		.bulletActive, .swiper-pagination-bullet-active
-			background: #E6DC87
-			border-color: #E6DC87
-			&:hover
-				background: #E6DC87aa
-				border-color: #E6DC87aa
-			&::before
-				background: #E6DC87
-
+	
 .section__cards
 	height: 90vh
 	min-height: 700px
@@ -931,10 +906,10 @@
 	.doctor-cols-swiper-pagination span:before
 		background: #ffffff69
 	.doctor-cols-swiper-pagination .swiper-pagination-bullet-active
-		background: linear-gradient(180deg, #875F46 0%, #E6DC87 49.48%, #A5804F 100%)
-		border-color: transparent
+		background: #E6DC87
+		border-color: #E6DC87
 	.doctor-cols-swiper-pagination .swiper-pagination-bullet-active:before
-		background: linear-gradient(180deg, #875F46 0%, #E6DC87 49.48%, #A5804F 100%)
+		background: #E6DC87
 
 .form__writeMe__left
 	position: relative
@@ -1289,7 +1264,7 @@
 .aboutUs
 	.swiper-pagination
 		.swiper-pagination-bullet
-			background: #aaa
+			background: #fff
 .aboutUs__UpElement
 	position: absolute
 	width: 100vw

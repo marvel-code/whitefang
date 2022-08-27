@@ -1,0 +1,64 @@
+
+$passive-color: rgba(18, 18, 18, 0.3)
+$hover-passive-color: rgba(18, 18, 18, 0.1)
+$active-color: #E6DC87
+$hover-active-color: #E6DC87aa
+
+.swiper-controls--bottom
+    position: relative
+    margin-top: 20px
+    display: flex
+    align-items: center
+    justify-content: center
+    
+    .swiper-button-prev,
+    .swiper-button-next
+        position: static
+        margin-top: 0
+        height: 20px
+
+    .swiper-pagination.bullets__line
+        position: static
+        width: fit-content
+        padding-left: 53px
+        display: flex
+        .swiper-pagination-bullet
+            position: relative
+            width: 18px
+            height: 18px
+            background: transparent
+            opacity: 1
+            margin-right: 53px
+            box-sizing: border-box
+            border: 2px solid $passive-color
+            transition: background 0.2s ease-in-out
+            &:hover
+                background: $hover-passive-color
+            &::before
+                content: ' '
+                background: $passive-color
+                position: absolute
+                left: -59px
+                bottom: calc(50% - 1px)
+                width: 57px
+                height: 2px
+                transition: background 0.2s ease-in-out
+            &:first-child
+                &::before
+                    content: none
+        .bulletActive, 
+        .swiper-pagination-bullet-active
+            background: $active-color !important
+            border-color: $active-color !important
+            &:hover
+                background: $hover-active-color !important
+                border-color: $hover-active-color !important
+            &::before
+                background: $active-color !important
+
+    &.white-passive
+        .swiper-pagination.bullets__line
+            .swiper-pagination-bullet
+                border-color: white
+                &::before
+                    background-color: white
