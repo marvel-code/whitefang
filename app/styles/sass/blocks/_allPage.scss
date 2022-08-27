@@ -20,16 +20,13 @@
 	margin-bottom: 0 !important;
 }
 .show-more__content{
-	visibility: hidden;
-	opacity: 0;
+	overflow: hidden;
 	height: 0;
-	transition: ease all 0.3s;
+	transition: all 0.3s ease;
 	margin-top: 20px;
 }
 .show-more__content.active{
-	visibility: visible;
-	opacity: 1;
-	height: auto;
+	height: 400px;
 }
 .doctor__wrapp {
 	position: relative;
