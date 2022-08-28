@@ -488,12 +488,17 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Новость
 	let newsswiper = new Swiper(".news-swiper", {
 		slidesPerView: 1,
+		effect: 'fade',
 		keyboard: {
 			enabled: true,
 		},
 		pagination: {
 			el: ".news-swiper .swiper-pagination",
 			clickable: true,
+		},
+		navigation: {
+			prevEl: '.news-swiper .swiper-button-prev',
+			nextEl: '.news-swiper .swiper-button-next',
 		},
 	});
 
