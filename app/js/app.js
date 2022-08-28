@@ -477,15 +477,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	let equipmentswiper = new Swiper(".equipment-swiper", {
 		slidesPerView: "auto",
 		spaceBetween: 30,
-		speed: 6000,
+		speed: 1000,
 		loop: true,
-		autoplay: {
-			delay: 3000,
-		},
 		navigation: {
-				nextEl: ".equipment-swiper-button-next",
-				prevEl: ".equipment-swiper-button-prev",
-			},
+			nextEl: ".equipment-swiper-button-next",
+			prevEl: ".equipment-swiper-button-prev",
+		},
 	});
 	let newsswiper = new Swiper(".news-swiper", {
 		slidesPerView: 1,
