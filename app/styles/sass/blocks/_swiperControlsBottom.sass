@@ -26,39 +26,38 @@ $hover-active-color: #E6DC87aa
             position: relative
             width: 18px
             height: 18px
-            background: transparent
             opacity: 1
             margin-right: 53px
             box-sizing: border-box
-            border: 2px solid $passive-color
             transition: background 0.2s ease-in-out
+            background: $active-color
+            border: 2px solid $active-color
             &:hover
-                background: $hover-passive-color
+                background: $hover-active-color
+                border-color: $hover-active-color
             &::before
                 content: ' '
-                background: $passive-color
                 position: absolute
                 left: -59px
                 bottom: calc(50% - 1px)
                 width: 57px
                 height: 2px
                 transition: background 0.2s ease-in-out
+                background: $active-color
             &:first-child
                 &::before
                     content: none
-        .bulletActive, 
-        .swiper-pagination-bullet-active
-            background: $active-color !important
-            border-color: $active-color !important
+        .swiper-pagination-bullet-active ~ .swiper-pagination-bullet
+            background: transparent
+            border-color: $passive-color
             &:hover
-                background: $hover-active-color !important
-                border-color: $hover-active-color !important
+                background: $hover-passive-color
             &::before
-                background: $active-color !important
+                background: $passive-color
 
     &.white-passive
         .swiper-pagination.bullets__line
-            .swiper-pagination-bullet
-                border-color: white
-                &::before
-                    background-color: white
+            .swiper-pagination-bullet-active ~ .swiper-pagination-bullet
+                    border-color: white
+                    &::before
+                        background-color: white

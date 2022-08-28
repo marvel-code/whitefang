@@ -473,7 +473,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			},
 		});
 
-
+	// Оборудование
 	let equipmentswiper = new Swiper(".equipment-swiper", {
 		slidesPerView: "auto",
 		spaceBetween: 30,
@@ -484,16 +484,17 @@ document.addEventListener('DOMContentLoaded', () => {
 			prevEl: ".equipment-swiper-button-prev",
 		},
 	});
+
+	// Новость
 	let newsswiper = new Swiper(".news-swiper", {
 		slidesPerView: 1,
 		keyboard: {
 			enabled: true,
 		},
 		pagination: {
-			el: ".news-swiper-pagination",
+			el: ".news-swiper .swiper-pagination",
 			clickable: true,
 		},
-
 	});
 
 	let newsotherswiper = new Swiper(".news-other-swiper", {
